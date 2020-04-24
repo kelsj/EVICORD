@@ -10,7 +10,7 @@
 #' 4. empirical cumulative density of the fraction of z samples for each variant greater than x (with x=1,2,3,...); i.e., zGT1 = the fraction of posterior samples that the variant is assigned to be non-IBD
 
 #function to get summary of sampler chains from rds file
-get_bhm_summary = function(filename, ac, tf, width=4, height=8){
+viz_res = function(filename, ac, tf, width=4, height=8, outfile="gibbs_sampler_out_viz.pdf"){
 	npairs = choose(ac,2)
 	nk = as.integer(ac/2)+1
 
@@ -60,6 +60,6 @@ get_bhm_summary = function(filename, ac, tf, width=4, height=8){
 	fgt = fgt %>% gather(key="k",value="zGT",zGT1:!!paste("zGT",(nk-1),sep=""))
 	p4 = ggplot(fgt) + stat_ecdf(aes(x=zGT,color=k))
 	plotsummary = plot_grid(p1,p2,p3,p4,nrow=4)	
-	ggsave("gibbs_sampler_out_viz.pdf",plotsummary,width=width,height=height)
+	ggsave(outfile,plotsummary,width=width,height=height)
 }
 
