@@ -3,7 +3,6 @@
 #' user provided values: allele count, alphaRec, betaRec, 
 
 #allele count
-ac = 3
 npairs = choose(ac,2)
 
 #gibbs sample to estimate hierarchical model including t estimates for each var
