@@ -1,10 +1,12 @@
 #' function: load_dists_data
-#' user provides allele count (ac) and recombination distance data in format:
-#' varID distL_cM distR_cM
+#' user provides recombination distances file, if file contains header(T/F), allele count (ac)
+#' distances file format: varID distL_cM distR_cM
 #' this script checks that there are 3 cols, calculate # allele pairs
 #' filter for variants with correct # of allele pairs
 
-load_dists = function(dists,ac){
+load_dists = function(distsFile,head,ac){
+	dists = read.table(distsFile,header=head) %>% tbl_df()
+	
 	#check dimensions of data
 	ncol = dim(dists)[2]
 	if (ncol!=3){
