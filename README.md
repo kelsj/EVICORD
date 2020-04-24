@@ -31,10 +31,10 @@ sampler(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,niter) #returns
 
 4. Visualize results from gibbs_sampler_out.rds. Required parameters: **filename**, e.g. gibbs\_sampler\_out.rds; **ac**, allele count; **tf** integer to thin chains by for visualization. Output plot panels:
 
-  1. chain of beta samples by iteration
-  2. chain of pi samples by iteration
-  3. density of t estimates for each allele pair category (t1,t2,t3)
-  4. empirical cumulative density of the fraction of z samples for each variant greater than x (with x=1,2,3,...); i.e., zGT1 = the fraction of posterior samples that the variant is assigned to be non-IBD.
+    1. chain of beta samples by iteration
+    2. chain of pi samples by iteration
+    3. density of t estimates for each allele pair category (t1,t2,t3)
+    4. empirical cumulative density of the fraction of z samples for each variant greater than x (with x=1,2,3,...); i.e., zGT1 = the fraction of posterior samples that the variant is assigned to be non-IBD.
 
 ```R
 viz_res(filename="gibbs_sampler_out.rds") #saves visualizations in pdf: gibbs_sampler_out_viz.pdf
