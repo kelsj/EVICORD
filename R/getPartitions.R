@@ -1,4 +1,4 @@
-#' function: getPartitions
+#' getPartitions
 #' from allele count (ac), generate list of possible recurrent partitions
 #' nrec_k = number of recurrent allele pairs for partition k
 #' nibd1_k = number of IBD allele pairs in IBD grp1 for partition k

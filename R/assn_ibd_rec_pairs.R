@@ -1,4 +1,4 @@
-#' function: assn_ibd_rec_pairs
+#' assn_ibd_rec_pairs
 #' given ac and vector of inds in a cluster (cluster1), get inds in each ibd/rec pair
 
 assn_ibd_rec_pairs = function(ac,cluster1){

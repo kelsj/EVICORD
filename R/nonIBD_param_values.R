@@ -20,7 +20,7 @@ sample_beta_nonIBD = function(t,alpha,alpha0,beta0){
 }
 
 #gibbs sampling for alpha, beta, & t from d observations
-nonIBD_param_values = function(dists,alpha,alpha0,beta0) {	
+nonIBD_param_values = function(dists,n_nonIBDpairs,alpha,alpha0,beta0,niter,outfile="sampled_nonIBD_param_values") {	
 	#filter to correct # non-IBD pairs per variant
 	varsKeep = dists %>% group_by(varID) %>% summarise(n=n()) %>% filter(n==n_nonIBDpairs)
 	dists = dists %>% filter(varID %in% varsKeep$varID)
@@ -45,7 +45,7 @@ nonIBD_param_values = function(dists,alpha,alpha0,beta0) {
 	}
 	#save output
 	outdat = list("betaSamp"=beta_i, "tSamp"=t_i)
-	saveRDS(outdat,file="sampled_nonIBD_param_values.rds")
+	saveRDS(outdat,file=paste(outfile,".rds",sep=""))
 	
 }
 

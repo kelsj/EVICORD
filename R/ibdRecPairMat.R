@@ -1,4 +1,4 @@
-#' function: ibdRecPairMat
+#' ibdRecPairMat
 #' for each recurrent partition k for a given allele count (ac), get matrices of all possible IBD/rec pairs
 
 ibdRecPairMat = function(ac){
