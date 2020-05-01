@@ -46,6 +46,7 @@ nonIBD_param_values = function(dists,n_nonIBDpairs,alpha,alpha0,beta0,niter,outf
 	#save output
 	outdat = list("betaSamp"=beta_i, "tSamp"=t_i)
 	saveRDS(outdat,file=paste(outfile,".rds",sep=""))
+	return(paste("output saved in ",outfile,".rds",sep=""))
 	
 }
 

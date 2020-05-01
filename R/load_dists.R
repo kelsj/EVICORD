@@ -1,11 +1,11 @@
-#' function: load_dists_data
+#' function: load_dists
 #' user provides recombination distances file, if file contains header(T/F), allele count (ac)
 #' distances file format: varID distL_cM distR_cM
 #' this script checks that there are 3 cols, calculate # allele pairs
 #' filter for variants with correct # of allele pairs
 
-load_dists = function(distsFile,head,ac){
-	dists = read.table(distsFile,header=head) %>% tbl_df()
+load_dists = function(distsFile,header=T,ac){
+	dists = read.table(distsFile,header=header) %>% tbl_df()
 	
 	#check dimensions of data
 	ncol = dim(dists)[2]
@@ -19,10 +19,6 @@ load_dists = function(distsFile,head,ac){
 	incl_varIDs = dists %>% group_by(varID) %>% summarise(count=n()) %>% filter(count == npairs)
 	dists = dists %>% filter(varID %in% incl_varIDs$varID)
 
-	#number of variants included
-	n = length(unique(dists$varID))
-	m = n*npairs
-
-	return(dists,n,m)
+	return(dists)
 }
 

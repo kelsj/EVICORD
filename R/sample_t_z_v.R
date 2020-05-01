@@ -12,7 +12,15 @@
 #' distances are in order so each npairs are for one variant
 #' npairs = numbr of allele pairs for these allele count (=choose(ac,2))
 
-sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,npairs){
+sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac){
+	npairs = choose(ac,2)
+	
+	#get matrices of pairs for each pair type
+	pairmat = ibdRecPairMat(ac)
+	ibd1AssByK = pairmat$ibd1AssByK
+	ibd2AssByK = pairmat$ibd2AssByK
+	recAssByK = pairmat$recAssByK
+	
 	z = c()
 	v = c()
 	t = matrix(nrow=n,ncol=3)

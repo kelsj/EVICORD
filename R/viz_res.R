@@ -2,12 +2,15 @@
 #' takes list of output from gibbs sampler, visualize posterior chains
 #' input: filename e.g. gibbs_sampler_out.rds, ac (allele count), tf (integer factor to thin chains by), plot width (optional, default 4in), plot height (optional, default 8in)
 #' requires ggplot, cowplot, dplyr
-
 #' output plots:
 #' 1. chain of beta samples by iteration
 #' 2. chain of pi samples by iteration
 #' 3. density of t estimates for each allele pair category (t1,t2,t3)
 #' 4. empirical cumulative density of the fraction of z samples for each variant greater than x (with x=1,2,3,...); i.e., zGT1 = the fraction of posterior samples that the variant is assigned to be non-IBD
+
+#' @import dplyr
+#' @import cowplot
+#' @import dplyr
 
 #function to get summary of sampler chains from rds file
 viz_res = function(filename, ac, tf, width=4, height=8, outfile="gibbs_sampler_out_viz.pdf"){
