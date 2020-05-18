@@ -5,6 +5,17 @@ This R package implements a Gibbs sampler for the Bayesian hierarchical model de
 The purpose of this method is to classify variants as likely IBD or non-IBD using the pairwise recombination distances between allele pairs.
 
 
+## Installation
+
+```R
+#install from github
+library(devtools)
+github_install("kelsj/ibdibsR")
+#load package
+library(ibdibsR)
+```
+
+
 ## Steps to run sampler
 
 
