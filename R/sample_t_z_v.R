@@ -14,11 +14,11 @@
 
 #' @export
 
-sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac){
+sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac,nibd1_k,nibd2_k,nrec_k,n){
 	npairs = choose(ac,2)
 	
 	#get matrices of pairs for each pair type
-	pairmat = ibdRecPairMat(ac)
+	pairmat = ibdRecPairMat(ac,nibd1_k,nibd2_k,nrec_k)
 	ibd1AssByK = pairmat$ibd1AssByK
 	ibd2AssByK = pairmat$ibd2AssByK
 	recAssByK = pairmat$recAssByK

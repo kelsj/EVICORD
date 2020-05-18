@@ -5,7 +5,7 @@
 \title{ibdRecPairMat
 for each recurrent partition k for a given allele count (ac), get matrices of all possible IBD/rec pairs}
 \usage{
-ibdRecPairMat(ac)
+ibdRecPairMat(ac, nibd1_k, nibd2_k, nrec_k)
 }
 \description{
 ibdRecPairMat

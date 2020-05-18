@@ -63,7 +63,7 @@ sampler = function(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,nite
 		beta_i[i+1,2] = betaRec
 	
 		#update z,v,t
-		zvt = ibdibsR::sample_t_z_v(alphas,beta_i[i+1,],pi_chain[i,],dists$distL_cM,dists$distR_cM,ac)
+		zvt = ibdibsR::sample_t_z_v(alphas,beta_i[i+1,],pi_chain[i,],dists$distL_cM,dists$distR_cM,ac,nibd1_k,nibd2_k,nrec_k,n)
 		z_chain[i+1,] = zvt$z
 		v_chain[i+1,] = zvt$v
 		t1_i[i+1,] = zvt$t[,1]
