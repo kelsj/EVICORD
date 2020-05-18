@@ -15,7 +15,7 @@ x_i2=distsR
 distances are in order so each npairs are for one variant
 npairs = numbr of allele pairs for these allele count (=choose(ac,2))}
 \usage{
-sample_t_z_v(alpha, beta, pi, x_i1, x_i2, ac, nibd1_k, nibd2_k, nrec_k, n)
+sample_t_z_v(alpha, beta, pi, x_i1, x_i2, ac, nibd1_k, nibd2_k, nrec_k, n, nk)
 }
 \description{
 function: sample_t_z_v

@@ -14,7 +14,7 @@
 
 #' @export
 
-sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac,nibd1_k,nibd2_k,nrec_k,n){
+sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac,nibd1_k,nibd2_k,nrec_k,n,nk){
 	npairs = choose(ac,2)
 	
 	#get matrices of pairs for each pair type
