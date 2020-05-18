@@ -2,3 +2,4 @@ Package: ibdibsR
 Version: 0.1
 Author: Kelsey E. Johnson (kelseyelizabethjohnson@gmail.com)
 RoxygenNote: 7.1.0
+License: MIT + file LICENSE
