@@ -1,8 +1,15 @@
-#' function: load_dists
-#' user provides recombination distances file, if file contains header(T/F), allele count (ac)
-#' distances file format: varID distL_cM distR_cM
-#' this script checks that there are 3 cols, calculate # allele pairs
+#' load recombination distances file
+#'
+#' reads in distances file and makes sure it is in the correct format (columns: varID distL_cM distR_cM)
+#' checks that there are 3 cols, calculate # allele pairs
 #' filter for variants with correct # of allele pairs
+#'
+#' @param distsFile recombination distances file
+#' @param header logical, does file contains header(T/F)
+#' @param ac allele count
+#'
+#' @return tbl of filtered recombination distances
+#' 
 #' @export
 
 load_dists = function(distsFile,header=T,ac){

@@ -2,18 +2,22 @@
 % Please edit documentation in R/load_dists.R
 \name{load_dists}
 \alias{load_dists}
-\title{function: load_dists
-user provides recombination distances file, if file contains header(T/F), allele count (ac)
-distances file format: varID distL_cM distR_cM
-this script checks that there are 3 cols, calculate # allele pairs
-filter for variants with correct # of allele pairs}
+\title{load recombination distances file}
 \usage{
 load_dists(distsFile, header = T, ac)
 }
+\arguments{
+\item{distsFile}{recombination distances file}
+
+\item{header}{logical, does file contains header(T/F)}
+
+\item{ac}{allele count}
+}
+\value{
+tbl of filtered recombination distances
+}
 \description{
-function: load_dists
-user provides recombination distances file, if file contains header(T/F), allele count (ac)
-distances file format: varID distL_cM distR_cM
-this script checks that there are 3 cols, calculate # allele pairs
+reads in distances file and makes sure it is in the correct format (columns: varID distL_cM distR_cM)
+checks that there are 3 cols, calculate # allele pairs
 filter for variants with correct # of allele pairs
 }
