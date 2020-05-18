@@ -1,5 +1,6 @@
 #' function: sample_beta
 #' sample beta from beta|d,t,alpha
+#' @export
 
 sample_beta = function(t,alpha,alpha0,beta0){
 	#t = vector of ages

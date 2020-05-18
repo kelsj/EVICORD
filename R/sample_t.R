@@ -1,6 +1,7 @@
 #' function: sample t (TMRCA)
 #' sample t from gamma distribution, given distance d, alpha, beta
 #' t ~ gamma(alpha,beta)
+#' @export
 
 sample_t = function(d,alpha,beta){
 	#d = vector of distances

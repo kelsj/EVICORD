@@ -5,6 +5,7 @@
 #' nibd2_k = number of IBD allele pairs in IBD grp1 for partition k
 #' partitions = partition (e.g. 1 for 1:(ac-1), 2 for 2:(ac-2))
 #' nk = number of partitions for this allele count
+#' @export
 
 getPartitions = function(ac) {
 	npairs = choose(ac,2)

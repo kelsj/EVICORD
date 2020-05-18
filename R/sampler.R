@@ -5,6 +5,7 @@
 #' @import dplyr
 #' @import tidyr
 #' @import ggplot2
+#' @export
 
 
 sampler = function(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,niter,outfile="gibbs_sampler_out.rds") {

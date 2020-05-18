@@ -1,6 +1,7 @@
 #' function: sample_pi
 #' sampe pi from dirichlet given assignments of k for each variant (vector z), priors (vector piPriors)
 #' nk = number of k values (1=IBD, 1=1:(n-1), 2=2:(n-2), etc.)
+#' @export
 
 #' @import gtools
 

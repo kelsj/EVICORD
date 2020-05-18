@@ -2,6 +2,7 @@
 #' gibbs sampling of t, beta from recomb distances of known non-IBD allele pairs 
 #' input: dists in format varID, distL, distR
 #' user provided values: n_nonIBDpairs, alpha, alpha0, beta0, niter
+#' @export
 
 #sample t from t|d,alpha,beta
 sample_t_nonIBD = function(d,alpha,beta){

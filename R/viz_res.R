@@ -11,6 +11,7 @@
 #' @import dplyr
 #' @import cowplot
 #' @import dplyr
+#' @export
 
 #function to get summary of sampler chains from rds file
 viz_res = function(filename, ac, tf, width=4, height=8, outfile="gibbs_sampler_out_viz.pdf"){

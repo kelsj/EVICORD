@@ -12,6 +12,8 @@
 #' distances are in order so each npairs are for one variant
 #' npairs = numbr of allele pairs for these allele count (=choose(ac,2))
 
+#' @export
+
 sample_t_z_v = function(alpha,beta,pi,x_i1,x_i2,ac){
 	npairs = choose(ac,2)
 	

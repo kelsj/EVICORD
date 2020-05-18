@@ -1,5 +1,6 @@
 #' function: jvals_by_k
 #' generates matrices of all possible assignments j for each allele pair, for a partition k
+#' @export
 
 #jvals for each k:
 jvals_by_k = function(nk,npairs,partitions){

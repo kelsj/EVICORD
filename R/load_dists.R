@@ -3,6 +3,7 @@
 #' distances file format: varID distL_cM distR_cM
 #' this script checks that there are 3 cols, calculate # allele pairs
 #' filter for variants with correct # of allele pairs
+#' @export
 
 load_dists = function(distsFile,header=T,ac){
 	dists = read.table(distsFile,header=header) %>% tbl_df()

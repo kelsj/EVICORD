@@ -1,5 +1,6 @@
 #' assn_ibd_rec_pairs
 #' given ac and vector of inds in a cluster (cluster1), get inds in each ibd/rec pair
+#' @export
 
 assn_ibd_rec_pairs = function(ac,cluster1){
 	cluster2 = c(1:ac)[!(c(1:ac) %in% cluster1)]

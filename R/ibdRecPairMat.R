@@ -1,5 +1,6 @@
 #' ibdRecPairMat
 #' for each recurrent partition k for a given allele count (ac), get matrices of all possible IBD/rec pairs
+#' @export
 
 ibdRecPairMat = function(ac){
 	ibd1AssByK = list()
