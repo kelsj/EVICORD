@@ -1,6 +1,6 @@
 # ibdibsR
 
-This R package implements a Gibbs sampler for the Bayesian hierarchical model described in [Johnson & Voight 2020](hyperlink).
+This R package implements a Gibbs sampler for the Bayesian hierarchical model described in [Johnson & Voight 2020](https://www.biorxiv.org/content/10.1101/2020.05.26.117358v1).
 
 The purpose of this method is to classify variants as likely IBD or non-IBD using the pairwise recombination distances between allele pairs.
 
