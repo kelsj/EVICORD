@@ -1,4 +1,6 @@
-# ibdibsR
+# EVICORD
+
+EVICORD (EValuating IBD Consistency via Obligate Recombination Distance)
 
 This R package implements a Gibbs sampler for the Bayesian hierarchical model described in [Johnson & Voight 2020](https://www.biorxiv.org/content/10.1101/2020.05.26.117358v1).
 
