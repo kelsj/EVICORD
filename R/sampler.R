@@ -27,7 +27,7 @@ sampler = function(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,nite
 	piPriors = piPriors/sum(piPriors)
 	
 	#partitions from getPartitions
-	part = ibdibsR::getPartitions(ac)
+	part = EVICORD::getPartitions(ac)
 	nrec_k = part$nrec_k
 	nibd1_k = part$nibd1_k
 	nibd2_k = part$nibd2_k
@@ -59,11 +59,11 @@ sampler = function(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,nite
 	
 	for (i in 1:niter){
 		#sample beta for ibd
-		beta_i[i+1,1] = ibdibsR::sample_beta(c(t1_i[i,],t2_i[i,]) %>% na.omit(), alphas[1],alpha0,beta0)
+		beta_i[i+1,1] = EVICORD::sample_beta(c(t1_i[i,],t2_i[i,]) %>% na.omit(), alphas[1],alpha0,beta0)
 		beta_i[i+1,2] = betaRec
 	
 		#update z,v,t
-		zvt = ibdibsR::sample_t_z_v(alphas,beta_i[i+1,],pi_chain[i,],dists$distL_cM,dists$distR_cM,ac,nibd1_k,nibd2_k,nrec_k,n,nk)
+		zvt = EVICORD::sample_t_z_v(alphas,beta_i[i+1,],pi_chain[i,],dists$distL_cM,dists$distR_cM,ac,nibd1_k,nibd2_k,nrec_k,n,nk)
 		z_chain[i+1,] = zvt$z
 		v_chain[i+1,] = zvt$v
 		t1_i[i+1,] = zvt$t[,1]
@@ -71,7 +71,7 @@ sampler = function(dists,ac,alphaRec,betaRec,alphaIBD,alpha0,beta0,piPriors,nite
 		t3_i[i+1,] = zvt$t[,3]
 	
 		#update pi
-		pi_chain[i+1,] = sort(ibdibsR::sample_pi(z_chain[i+1,],piPriors,nk),decreasing=T)
+		pi_chain[i+1,] = sort(EVICORD::sample_pi(z_chain[i+1,],piPriors,nk),decreasing=T)
 	}
 	
 	outlist = list("nVars"=n,"beta"=beta_i,"pi"=pi_chain,"t1"=t1_i,"t2"=t2_i,"t3"=t3_i,"z"=z_chain,"v"=v_chain)
